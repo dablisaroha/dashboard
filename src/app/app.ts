@@ -1,4 +1,6 @@
 import { Component, signal } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -9,4 +11,13 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('dashboard');
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer
+  ) {
+    this.matIconRegistry.addSvgIconSet(
+      this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/icons.svg')
+    );
+  }
+
 }

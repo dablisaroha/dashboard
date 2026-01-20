@@ -1,0 +1,91 @@
+<div class="dashboard">
+
+    <!-- Snapshot Cards -->
+    <div class="snapshot">
+        <div class="card" *ngFor="let card of snapshotCards;let i = index" [ngClass]="card.color">
+            <div class="main-info-card">
+                <div>
+                    <div class="title" [attr.data-index]="i">{{card.title}}</div>
+                    <div class="value">{{card.value}}</div>
+                </div>
+                <div class="icon">
+                    <mat-icon class="svg svg-icon" fontSet="material-icons-outlined" [attr.data-index]="i">{{card.icon}}</mat-icon>
+                </div>
+            </div>
+            <div class="change">
+                <span>
+                    <mat-icon *ngIf="i === 0" class="svg-icon-0">arrow_upward</mat-icon>
+                    <mat-icon *ngIf="i === 1" class="svg-icon-1">arrow_upward</mat-icon>
+                    <mat-icon *ngIf="i === 2" class="svg-icon-2">arrow_downward</mat-icon>
+                    <mat-icon *ngIf="i === 3" class="svg-icon-3">arrow_upward</mat-icon>
+                </span>
+                <span [attr.data-index]="i">{{card.change}}</span>
+                <span class="subtitle">{{card.subtitle}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Cash Flow Chart -->
+        <mat-card class="chart-card">
+            <div class="header">
+                <span>Cash Flow Projection (13 Weeks)</span>
+                <a>View Full Report <mat-icon>chevron_right</mat-icon>
+                </a>
+            </div>
+
+            <div class="chart-container">
+                <canvas baseChart [data]="barChartData" [type]="barChartType" [options]="barChartOptions">
+                </canvas>
+            </div>
+
+            <p class="hint">Click on any bar to view detailed breakdown for that week</p>
+        </mat-card>
+
+        <!-- Alerts -->
+        <mat-card class="alerts">
+            <div class="alerts-header">
+                <h3>Alerts & Tasks</h3>
+            </div>
+            <div class="alerts-content">
+                <h4 class="alerts-subheader">Overdue Receivables (Top 5)</h4>
+                <div class="alert-card" *ngFor="let item of [1,2,3,4,5]">
+                    <div class="alert-title">
+                        <div>
+                            <p class="title1 title2">TechNova Solutions</p>
+                            <p class="title1">INV-2023-421 · 15 days overdue</p>
+                        </div>
+                        <div class="amount">₹25,000</div>
+                    </div>
+                    <div class="actions">
+                        <button  class="btn-first">Mark Paid</button>
+                        <button  class="alertbtn-second">Send Reminder</button>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+
+        <!-- Upcoming Payables -->
+        <mat-card class="payables">
+            <div class="payables-header">
+                <h3>Upcoming Payables (Next 7 Days)</h3>
+            </div>
+            <div class="payables-content">
+                <div class="payable-card" *ngFor="let p of upcomingPayables">
+                    <div class="payable-title">
+                        <div>
+                            <p class="title1 title2">{{p.name}}</p>
+                            <p class="title1">{{p.poNumber}} · Due in {{p.dueIn}} days</p>
+                        </div>
+                        <div class="payables-amount">₹{{p.amount | number}}</div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-first">Schedule</button>
+                        <button class="paybtn-second">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
