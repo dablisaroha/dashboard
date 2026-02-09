@@ -1,5 +1,15 @@
 <div class="dashboard">
 
+
+    <div class="header">
+        <div class="left">Financial Snapshot</div>
+        <div class="right">
+            <span class="updated"><mat-icon class="refresh">schedule</mat-icon>Last updated: May 7, 2025 - 09:15 AM</span>
+            <button class="nav-btn"><mat-icon class="refresh">save_alt</mat-icon>Download Board Pack</button>
+            <button class="nav-btn primary"><mat-icon class="refresh">autorenew</mat-icon>Refresh Data</button>
+        </div>
+    </div>
+
     <!-- Snapshot Cards -->
     <div class="snapshot">
         <div class="card" *ngFor="let card of snapshotCards;let i = index" [ngClass]="card.color">
@@ -9,7 +19,8 @@
                     <div class="value">{{card.value}}</div>
                 </div>
                 <div class="icon">
-                    <mat-icon class="svg svg-icon" fontSet="material-icons-outlined" [attr.data-index]="i">{{card.icon}}</mat-icon>
+                    <mat-icon class="svg svg-icon" fontSet="material-icons-outlined"
+                        [attr.data-index]="i">{{card.icon}}</mat-icon>
                 </div>
             </div>
             <div class="change">
@@ -59,8 +70,8 @@
                         <div class="amount">₹25,000</div>
                     </div>
                     <div class="actions">
-                        <button  class="btn-first">Mark Paid</button>
-                        <button  class="alertbtn-second">Send Reminder</button>
+                        <button class="btn-first">Mark Paid</button>
+                        <button class="alertbtn-second">Send Reminder</button>
                     </div>
                 </div>
             </div>

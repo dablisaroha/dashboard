@@ -1,0 +1,73 @@
+/* Page background */
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fb;
+}
+
+/* Card */
+.login-card {
+  width: 800px;
+  padding: 100px 150px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+/* Title */
+.login-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #0E1C40;
+}
+
+/* Inputs */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.field-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2C3C28;
+  margin-bottom: 12px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+.login-btn {
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 15px;
+  background: #1248D4;
+  border: 2px solid #1248D4;
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s ease; /* smooth */
+
+  &:hover {
+    background-color: transparent;
+    color: #656565;
+  }
+}
+
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .login-card {
+    width: 100%;
+    margin: 16px;
+    padding: 28px 20px;
+  }
+}

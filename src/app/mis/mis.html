@@ -1,0 +1,110 @@
+<div class="headers">MIS And KPI Monitoring Screen
+    <div class="step-tabs">
+        <button class="step-tab active" routerLink="/pl" routerLinkActive="active">
+            P&L
+        </button>
+
+        <span class="step-line"></span>
+
+        <button class="step-tab" routerLink="/plNotes" routerLinkActive="active">
+            P&L Notes
+        </button>
+
+        <span class="step-line"></span>
+
+        <button class="step-tab" routerLink="/additionalNotes" routerLinkActive="active">
+            Additional Notes & Ratios
+        </button>
+
+        <span class="step-line"></span>
+
+        <button class="step-tab" routerLink="/plHrData" routerLinkActive="active">
+            P&L Notes-1(hr Data)
+        </button>
+
+        <span class="step-line"></span>
+
+        <button class="step-tab" routerLink="/stock" routerLinkActive="active">
+            Stock
+        </button>
+    </div>
+
+</div>
+
+<div class="modern-table-wrapper table-scroll">
+
+    <table mat-table [dataSource]="dataSource" class="modern-table" sticky>
+
+        <!-- PARTICULAR -->
+        <ng-container matColumnDef="particular">
+            <th mat-header-cell *matHeaderCellDef rowspan="2" class="particular-col">
+                PARTICULARS
+            </th>
+
+            <td mat-cell *matCellDef="let row" class="particular-col" [class.section]="row.section"
+                [class.total]="row.total">
+                {{ row.particular }}
+            </td>
+        </ng-container>
+
+        <!-- MAR GROUP -->
+        <ng-container matColumnDef="marGroup">
+            <th mat-header-cell *matHeaderCellDef colspan="2" class="group-header">
+                MAR-24
+            </th>
+        </ng-container>
+
+        <ng-container matColumnDef="marAmount">
+            <th mat-header-cell *matHeaderCellDef class="sub-header">Amount (In Rs.)</th>
+            <td mat-cell *matCellDef="let row">{{ row.marAmount }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="marRatio">
+            <th mat-header-cell *matHeaderCellDef class="sub-header">Ratio (%)</th>
+            <td mat-cell *matCellDef="let row">{{ row.marRatio }}</td>
+        </ng-container>
+
+        <!-- APR GROUP -->
+        <ng-container matColumnDef="aprGroup">
+            <th mat-header-cell *matHeaderCellDef colspan="2" class="group-header">
+                APR-24
+            </th>
+        </ng-container>
+
+        <ng-container matColumnDef="aprAmount">
+            <th mat-header-cell *matHeaderCellDef class="sub-header">Amount (In Rs.)</th>
+            <td mat-cell *matCellDef="let row">{{ row.aprAmount }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="aprRatio">
+            <th mat-header-cell *matHeaderCellDef class="sub-header">Ratio (%)</th>
+            <td mat-cell *matCellDef="let row">{{ row.aprRatio }}</td>
+        </ng-container>
+
+        <!-- MAY GROUP -->
+        <ng-container matColumnDef="mayGroup">
+            <th mat-header-cell *matHeaderCellDef colspan="2" class="group-header">
+                MAY-24
+            </th>
+        </ng-container>
+
+        <ng-container matColumnDef="mayAmount">
+            <th mat-header-cell *matHeaderCellDef class="sub-header">Amount (In Rs.)</th>
+            <td mat-cell *matCellDef="let row">{{ row.mayAmount }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="mayRatio">
+            <th mat-header-cell *matHeaderCellDef class="sub-header">Ratio (%)</th>
+            <td mat-cell *matCellDef="let row">{{ row.mayRatio }}</td>
+        </ng-container>
+
+        <!-- HEADER ROWS -->
+        <tr mat-header-row *matHeaderRowDef="groupHeaderColumns; sticky: true"></tr>
+        <tr mat-header-row *matHeaderRowDef="subHeaderColumns; sticky: true"></tr>
+
+        <!-- DATA ROW -->
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    </table>
+
+</div>

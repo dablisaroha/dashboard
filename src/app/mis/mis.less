@@ -1,0 +1,111 @@
+.headers {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #fff;
+}
+
+.step-tabs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    //   padding: 10px;
+}
+
+.step-tab {
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+.step-tab:hover {
+    background: #f9fafb;
+}
+
+/* Active tab */
+.step-tab.active {
+    border-color: #3b82f6;
+    color: #3b82f6;
+    background: #ffffff;
+}
+
+/* Connector line */
+.step-line {
+    width: 28px;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.modern-table-wrapper {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th {
+    background: #f8fafc !important;
+    font-size: 12px;
+    font-weight: 600;
+    color: oklch(55.1% .027 264.364);
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.group-header {
+    text-align: center;
+}
+
+.sub-header {
+    font-weight: 500;
+    font-size: 11px;
+    color: oklch(55.1% .027 264.364);
+}
+
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: oklch(21% .034 264.665);
+    text-align: center;
+    background-color: #FFF !important;
+}
+
+.section {
+    font-weight: 600;
+    background: #f9fafb;
+}
+
+.total {
+    font-weight: 700;
+}
+
+.table-scroll {
+  max-height: 480px;           /* 👈 adjust as needed */
+  overflow-y: auto;
+}
+
+/* Slightly stronger divider for header */
+th.particular-col {
+  border-right: 2px solid #e5e7eb;
+  background: #f8fafc;
+  z-index: 25; /* stays above sticky rows */
+}

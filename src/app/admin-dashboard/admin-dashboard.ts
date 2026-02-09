@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { verticalHoverPlugin } from '../plugins/chart-plugin';
+import { TopNavbar } from "../top-navbar/top-navbar";
 Chart.register(
   CategoryScale,
   LinearScale,
@@ -34,8 +35,8 @@ Chart.register(
     BaseChartDirective,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
-  ],
+    MatIconModule,
+],
   providers: [provideCharts()],
   templateUrl: './admin-dashboard.html',
   styleUrls: ['./admin-dashboard.less']
@@ -51,7 +52,7 @@ export class AdminDashboard {
 
   snapshotCards = [
     {
-      title: 'Net Cash Today',
+      title: 'Net Profit',
       value: '₹ 4,25,78,000',
       change: '3.2%',
       subtitle: ' vs. previous day',
@@ -59,7 +60,7 @@ export class AdminDashboard {
       icon: 'attach_money'
     },
     {
-      title: 'Cash Runway',
+      title: 'Cash Profit',
       value: '37 weeks',
       change: '2 weeks',
       subtitle: ' vs. previous month',
@@ -67,7 +68,7 @@ export class AdminDashboard {
       icon: 'calendar_today'
     },
     {
-      title: 'AR Overdue',
+      title: 'EBIDTA',
       value: '₹ 73,50,000',
       change: '8.5%',
       subtitle: ' vs. previous week',
@@ -75,13 +76,17 @@ export class AdminDashboard {
       icon: 'error_outline'
     },
     {
-      title: 'AP Due 7 Days',
+      title: 'Gross Profit',
       value: '₹ 61,45,000',
       change: '12.3%',
       subtitle: ' vs. previous week',
       color: 'purple',
       icon: 'email'
-    }
+    },
+    { title: 'Sales This Week', value: '₹18,20,000', icon: 'payments', change: '5.1%', subtitle: 'vs last week', color: 'blue' },
+    { title: 'Receivables This Week', value: '₹12,80,000', icon: 'credit_card', change: '2.4%', subtitle: 'vs last week', color: 'green' },
+    { title: 'Purchase', value: '₹12467', icon: 'description', change: '9%', subtitle: 'vs last month', color: 'orange' },
+    { title: 'Payables This Week', value: '₹96990/mo', icon: 'currency_rupee', change: '1.2%', subtitle: 'vs last month', color: 'purple' }
   ];
 
   barChartType: ChartType = 'bar';
