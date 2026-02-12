@@ -1,7 +1,7 @@
 <header class="top-nav">
     <div class="left">
         <span class="app-name">
-            <img style="max-width: 222px;" src="../../assets/images/jayanitha.png" alt="logo">
+            <img style="max-width: 222px; width: 120px; margin: 0 2.5rem; align-items: center;justify-content: center;" src="../../assets/images/jayanitha.png" alt="logo">
         </span>
 
         <span class="v-divider"></span>
@@ -21,6 +21,9 @@
                 <span class="User">User</span>
                 <span>admin@jayanitha.com</span>
             </div>
+            <button mat-icon-button class="logout-btn" matTooltip="Logout" (click)="logout()">
+                <mat-icon>logout</mat-icon>
+            </button>
         </div>
     </div>
 </header>

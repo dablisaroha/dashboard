@@ -1,30 +1,35 @@
 <div class="headers">MIS And KPI Monitoring Screen
     <div class="step-tabs">
-        <button class="step-tab active" routerLink="/pl" routerLinkActive="active">
+        <button class="step-tab active"
+        [class.active]="activeTab === 'pl'" (click)="setActive('pl')">
             P&L
         </button>
 
         <span class="step-line"></span>
 
-        <button class="step-tab" routerLink="/plNotes" routerLinkActive="active">
+        <button class="step-tab" routerLink="/plNotes" routerLinkActive="active"
+        [class.active]="activeTab === 'plNotes'" (click)="setActive('plNotes')">
             P&L Notes
         </button>
 
         <span class="step-line"></span>
 
-        <button class="step-tab" routerLink="/additionalNotes" routerLinkActive="active">
+        <button class="step-tab" routerLink="/additionalNotes" routerLinkActive="active"
+        [class.active]="activeTab === 'additionalNotes'" (click)="setActive('additionalNotes')">
             Additional Notes & Ratios
         </button>
 
         <span class="step-line"></span>
 
-        <button class="step-tab" routerLink="/plHrData" routerLinkActive="active">
+        <button class="step-tab" routerLink="/plHrData" routerLinkActive="active"
+        [class.active]="activeTab === 'plHrData'" (click)="setActive('plHrData')">
             P&L Notes-1(hr Data)
         </button>
 
         <span class="step-line"></span>
 
-        <button class="step-tab" routerLink="/stock" routerLinkActive="active">
+        <button class="step-tab" routerLink="/stock" routerLinkActive="active"
+        [class.active]="activeTab === 'stock'" (click)="setActive('stock')">
             Stock
         </button>
     </div>

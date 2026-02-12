@@ -44,7 +44,7 @@
   width: 1px;
   height: 60px;
   background: #e5e7eb;
-  margin: 0 1.3rem;
+  margin: 0 1rem 0 2.75rem;
 }
 
 .top-nav .right {
@@ -74,7 +74,8 @@
   font-size: 0.75rem;
   color: oklch(44.2% .017 285.786);
   font-weight: 500;
-  .User{
+
+  .User {
     color: oklch(21% .006 285.885);
     font-size: 12px;
     font-weight: 500;
@@ -91,7 +92,8 @@
   justify-content: center;
   font-weight: 600;
   border: 1px solid transparent;
-  &:hover{
+
+  &:hover {
     border: 1px solid oklch(70.5% .015 286.067);
   }
 }
@@ -239,9 +241,18 @@
 
 .mis-content {
   flex: 1;
-  background: #fff;
+  background: #fff !important;
   height: 100%;
   overflow-y: auto;
   /* ✅ dashboard scroll */
   // overflow-x: hidden;
+}
+
+.logout-btn {
+  mat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
 }

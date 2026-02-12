@@ -83,10 +83,10 @@ export class AdminDashboard {
       color: 'purple',
       icon: 'email'
     },
-    { title: 'Sales This Week', value: '₹18,20,000', icon: 'payments', change: '5.1%', subtitle: 'vs last week', color: 'blue' },
-    { title: 'Receivables This Week', value: '₹12,80,000', icon: 'credit_card', change: '2.4%', subtitle: 'vs last week', color: 'green' },
-    { title: 'Purchase', value: '₹12467', icon: 'description', change: '9%', subtitle: 'vs last month', color: 'orange' },
-    { title: 'Payables This Week', value: '₹96990/mo', icon: 'currency_rupee', change: '1.2%', subtitle: 'vs last month', color: 'purple' }
+    { title: 'Sales', value: '₹18,20,000', icon: 'payments', change: '5.1%', subtitle: 'vs last week', color: 'teal' },
+    { title: 'Receivables', value: '₹12,80,000', icon: 'credit_card', change: '2.4%', subtitle: 'vs last week', color: 'pink' },
+    { title: 'Purchase', value: '₹12467', icon: 'description', change: '9%', subtitle: 'vs last month', color: 'indigo' },
+    { title: 'Payables', value: '₹96990/mo', icon: 'currency_rupee', change: '1.2%', subtitle: 'vs last month', color: 'lime' }
   ];
 
   barChartType: ChartType = 'bar';

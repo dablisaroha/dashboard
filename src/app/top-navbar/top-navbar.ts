@@ -4,16 +4,18 @@ import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/rou
 import { CommonModule } from '@angular/common';
 import { NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-top-navbar',
-  imports: [CommonModule, MatIconModule, RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [CommonModule, MatIconModule, RouterOutlet, RouterLink, RouterLinkActive, MatButtonModule, MatTooltipModule],
   templateUrl: './top-navbar.html',
   styleUrl: './top-navbar.less',
 })
 export class TopNavbar implements OnInit {
   workflowOpen = false;
-  activeNav = 'dashboard';
+  activeNav = '';
   constructor(private router: Router) {
 
   }
@@ -42,5 +44,9 @@ export class TopNavbar implements OnInit {
 
   toggleWorkflow() {
     this.workflowOpen = !this.workflowOpen;
+  }
+
+  logout(){
+    this.router.navigate(['/login'])
   }
 }

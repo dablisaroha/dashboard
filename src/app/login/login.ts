@@ -68,15 +68,16 @@ export class login implements OnInit {
         localStorage.setItem('role', res.user.role);
         localStorage.setItem('userId', res.user.id);
         localStorage.setItem('adminId', res.user.created_by);
-        if (res.user.role === 'SUPERADMIN') {
-          this.router.navigate(['/manage-admin']);
-        } else if (res.user.role === 'ADMIN') {
-          this.router.navigate(['/admin-dashboard']);
-        } else {
-          this.router.navigate(['/inspection-form']);
-        }
+        // if (res.user.role === 'SUPERADMIN') {
+        //   this.router.navigate(['/manage-admin']);
+        // } else if (res.user.role === 'ADMIN') {
+        //   this.router.navigate(['/admin-dashboard']);
+        // } else {
+        //   this.router.navigate(['/inspection-form']);
+        // }
       },
       error: err => {
+        this.router.navigate(['/']);
         // this.snack.open(
         //   err.error.message || 'Login failed. Please try again.',
         //   'Close',
