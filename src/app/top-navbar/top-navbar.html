@@ -1,0 +1,78 @@
+<header class="top-nav">
+    <div class="left">
+        <span class="app-name">
+            <img style="max-width: 222px; width: 120px; margin: 0 2.5rem; align-items: center;justify-content: center;" [src]="'assets/images/jayanitha.png'" alt="logo">
+        </span>
+
+        <span class="v-divider"></span>
+
+        <span class="env">Demo environment</span>
+        <div><span class="status">
+                ●
+            </span> <span class="status-text">
+                System ready
+            </span></div>
+    </div>
+
+    <div class="right">
+        <div class="user">
+            <span class="avatar">U</span>
+            <div style="display: flex; flex-direction: column; align-items: flex-end;">
+                <span class="User">User</span>
+                <span>admin@jayanitha.com</span>
+            </div>
+            <button mat-icon-button class="logout-btn" matTooltip="Logout" (click)="logout()">
+                <mat-icon>logout</mat-icon>
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<div class="app-body">
+    <aside class="sidebar">
+
+        <div class="nav-section">
+            <button class="nav-item active" routerLink="/dashboard" routerLinkActive="active"
+                [class.active]="activeNav === 'dashboard'" (click)="setActive('dashboard')">
+                <mat-icon style="font-size: 21px;">home</mat-icon>
+                <span>Dashboard</span>
+            </button>
+        </div>
+
+        <div class="nav-divider"></div>
+
+        <div class="nav-section">
+            <button class="nav-item nav-title workflow" (click)="toggleWorkflow()">
+                <span class="nav-title-text">
+                    <mat-icon>dashboard</mat-icon>Workflows</span>
+                <mat-icon class="chevron" [class.open]="workflowOpen">
+                    expand_more
+                </mat-icon>
+            </button>
+            @if (workflowOpen) {
+            <button class="nav-item nav-title active" routerLink="/mis" routerLinkActive="active"
+                [class.active]="activeNav === 'mis'" (click)="setActive('mis')">
+                <span class="sub-arrow">
+                    <mat-icon>chevron_right</mat-icon>
+                    MIS</span>
+            </button>
+            }
+        </div>
+
+        <div class="nav-divider"></div>
+
+        <div class="nav-section">
+            <button class="nav-item nav-title active" routerLink="/configuration" routerLinkActive="active"
+                [class.active]="activeNav === 'configuration'" (click)="setActive('configuration')">
+                <span class="nav-title-text">
+                    <mat-icon>settings</mat-icon>Configuration</span>
+            </button>
+        </div>
+
+    </aside>
+
+    <main [ngClass]="activeNav === 'dashboard'? 'main-content': 'mis-content'">
+        <router-outlet></router-outlet>
+    </main>
+</div>
