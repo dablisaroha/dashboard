@@ -1,7 +1,8 @@
 <header class="top-nav">
     <div class="left">
         <span class="app-name">
-            <img style="max-width: 222px; width: 120px; margin: 0 2.5rem; align-items: center;justify-content: center;" [src]="'assets/images/jayanitha.png'" alt="logo">
+            <img style="max-width: 222px; width: 120px; margin: 0 2.5rem; align-items: center;justify-content: center;"
+                [src]="'assets/images/jayanitha.png'" alt="logo">
         </span>
 
         <span class="v-divider"></span>
@@ -43,21 +44,43 @@
         <div class="nav-divider"></div>
 
         <div class="nav-section">
-            <button class="nav-item nav-title workflow" (click)="toggleWorkflow()">
-                <span class="nav-title-text">
-                    <mat-icon>dashboard</mat-icon>Workflows</span>
-                <mat-icon class="chevron" [class.open]="workflowOpen">
-                    expand_more
-                </mat-icon>
-            </button>
-            @if (workflowOpen) {
             <button class="nav-item nav-title active" routerLink="/mis" routerLinkActive="active"
                 [class.active]="activeNav === 'mis'" (click)="setActive('mis')">
-                <span class="sub-arrow">
-                    <mat-icon>chevron_right</mat-icon>
+                <span class="nav-title-text">
+                    <mat-icon>dashboard</mat-icon>
                     MIS</span>
             </button>
-            }
+        </div>
+
+        <div class="nav-divider"></div>
+
+        <div class="nav-section">
+            <button class="nav-item nav-title active" routerLink="/bom" routerLinkActive="active"
+                [class.active]="activeNav === 'bom'" (click)="setActive('bom')">
+                <span class="nav-title-text">
+                    <mat-icon>account_tree</mat-icon>BOM</span>
+            </button>
+        </div>
+
+
+        <div class="nav-divider"></div>
+
+        <div class="nav-section">
+            <button class="nav-item nav-title active" routerLink="/stock" routerLinkActive="active"
+                [class.active]="activeNav === 'stock'" (click)="setActive('stock')">
+                <span class="nav-title-text">
+                    <mat-icon>stacked_bar_chart</mat-icon>Stock</span>
+            </button>
+        </div>
+
+        <div class="nav-divider"></div>
+
+        <div class="nav-section">
+            <button class="nav-item nav-title active" routerLink="/asset" routerLinkActive="active"
+                [class.active]="activeNav === 'asset'" (click)="setActive('asset')">
+                <span class="nav-title-text">
+                    <mat-icon>account_balance</mat-icon>Assets</span>
+            </button>
         </div>
 
         <div class="nav-divider"></div>

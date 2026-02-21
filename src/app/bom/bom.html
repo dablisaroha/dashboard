@@ -1,0 +1,88 @@
+<!-- bom.component.html -->
+
+<div class="headers">BOM Monitoring Screen</div>
+<div class="two-by-two-grid">
+
+    <!-- Sundry Debtors -->
+    <div class="modern-table-wrapper table-scroll">
+        <h3 class="table-title">Freeze</h3>
+        <table mat-table [dataSource]="freezeData" class="modern-table" sticky>
+
+            <ng-container matColumnDef="mainPart">
+                <th mat-header-cell *matHeaderCellDef>Main Part No</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.mainPart }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="subPart">
+                <th mat-header-cell *matHeaderCellDef>Sub Part No</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.subPart }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="qty">
+                <th mat-header-cell *matHeaderCellDef>Qty</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.qty }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="rate">
+                <th mat-header-cell *matHeaderCellDef>Rate</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.rate }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="cost">
+                <th mat-header-cell *matHeaderCellDef>Cost</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.cost }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="salePrice">
+                <th mat-header-cell *matHeaderCellDef>Sale Price</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.salePrice }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        </table>
+    </div>
+
+    <!-- Sundry Creditors -->
+    <div class="modern-table-wrapper table-scroll">
+        <h3 class="table-title">Dynamic</h3>
+        <table mat-table [dataSource]="dynamicData" class="modern-table">
+
+            <ng-container matColumnDef="mainPart">
+                <th mat-header-cell *matHeaderCellDef>Main Part No</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.mainPart }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="subPart">
+                <th mat-header-cell *matHeaderCellDef>Sub Part No</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.subPart }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="qty">
+                <th mat-header-cell *matHeaderCellDef>Qty</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.qty }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="rate">
+                <th mat-header-cell *matHeaderCellDef>Rate</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.rate }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="cost">
+                <th mat-header-cell *matHeaderCellDef>Cost</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.cost }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="salePrice">
+                <th mat-header-cell *matHeaderCellDef>Sale Price</th>
+                <td mat-cell *matCellDef="let row" [class.total]="row.total">{{ row.salePrice }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        </table>
+    </div>
+
+</div>

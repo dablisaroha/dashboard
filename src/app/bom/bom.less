@@ -8,44 +8,6 @@
     background: #fff;
 }
 
-.step-tabs {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    //   padding: 10px;
-}
-
-.step-tab {
-    padding: 6px 16px;
-    border-radius: 999px;
-    border: 1px solid #d1d5db;
-    background: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    color: #374151;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-/* Hover */
-.step-tab:hover {
-    background: #f9fafb;
-}
-
-/* Active tab */
-.step-tab.active {
-    border-color: #3b82f6;
-    color: #3b82f6;
-    background: #ffffff;
-}
-
-/* Connector line */
-.step-line {
-    width: 28px;
-    height: 1px;
-    background: #e5e7eb;
-}
-
 .modern-table-wrapper {
     background: #fff;
     border-radius: 12px;
@@ -58,6 +20,19 @@
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
+}
+
+.table-title {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px;
+    margin: 0;
+    background-color: #f8fafc;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e5e7eb;
+    color: oklch(55.1% .027 264.364);
 }
 
 th {
@@ -104,7 +79,6 @@ td {
     overflow-y: auto;
 }
 
-/* Slightly stronger divider for header */
 th.particular-col {
     border-right: 2px solid #e5e7eb;
     background: #f8fafc;
@@ -112,34 +86,8 @@ th.particular-col {
     /* stays above sticky rows */
 }
 
-tr.particular-col-3rd-table {
-    background: #f8fafc;
-    position: sticky;
-    top: 2.33rem;
-}
-
-.particular-col-hr-data{
-    width: 40%;
-}
-
 .two-by-two-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-}
-
-.table-additional-headers {
-    display: flex;
-    background: #f8fafc;
-    border-bottom:1px solid #e5e7eb ;
-    padding: 10px;
-    margin: 0px;
-    font-size: 14px;
-    font-weight: 600;
-    align-items: center;
-    justify-content: center;
-    position:sticky;
-    z-index: 999;
-    top: 0;
-    color: oklch(55.1% .027 264.364);
 }

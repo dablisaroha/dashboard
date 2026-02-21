@@ -4,6 +4,9 @@ import { MIS } from './mis/mis';
 import { Configuration } from './configuration/configuration';
 import { TopNavbar } from './top-navbar/top-navbar';
 import { login } from './login/login';
+import { Stock } from './stock/stock';
+import { Asset } from './asset/asset';
+import { Bom } from './bom/bom';
 
 export const routes: Routes = [
     { path: 'login', component: login },
@@ -19,6 +22,9 @@ export const routes: Routes = [
                 //     { path: 'pl', component: MIS }
                 // ]
             },
+            { path: 'stock', component: Stock },
+            { path: 'bom', component: Bom },
+            { path: 'asset', component: Asset },
             { path: 'configuration', component: Configuration }
         ]
     },

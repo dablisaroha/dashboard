@@ -33,6 +33,15 @@ export class TopNavbar implements OnInit {
         this.activeNav = 'mis';
         this.workflowOpen = true;
       } 
+      else if (url.startsWith('/bom')) {
+        this.activeNav = 'bom';
+      }
+      else if (url.startsWith('/stock')) {
+        this.activeNav = 'stock';
+      }
+      else if (url.startsWith('/asset')) {
+        this.activeNav = 'asset';
+      }
       else if (url.startsWith('/configuration')) {
         this.activeNav = 'configuration';
       }
